@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>自定义路由 route </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+    <link rel="stylesheet" href="./css/app.css">
+</head>
+
+<body>
+    <div id="routerView" data-animationName="slide">
+        <div class="page" data-hash="/home">
+            <div class="page-content">
+                <div id="home"></div>
+                <script type="text/javascript">
+                    window.home = function(route) {
+                        console.log('home:', route)
+                        var str = "<div><a class='back' onclick='window.history.go(-1)'>返回</a></div> <h2>首页</h2> <input type='text'> <div><a href='javascript:void(0);' onclick='linkTo(\"#/list\")'>列表</a></div><div class='height'>内容占位</div>"
+                        document.querySelector("#home").innerHTML = str
+                    }
+                </script>
+            </div>
+        </div>
+        <div class="page" data-hash="/list">
+            <div class="page-content">
+                <div id="list"></div>
+                <div style="height: 700px;border: solid 1px red;background-color: #eee;margin-top: 20px;">内容占位</div>
+
+                <script type="text/javascript">
+                    window.list = function(route) {
+                        console.log('list:', route)
+                        var str = "<div><a class='back' onclick='window.history.go(-1)'>返回</a></div> <h2>列表</h2> <input type='text'> <div><a href='javascript:void(0);' onclick='linkTo(\"#/detail\")'>详情</a></div>"
+                        document.querySelector("#list").innerHTML = str
+                    }
+                </script>
+            </div>
+        </div>
+        <div class="page" data-hash="/detail">
+            <div class="page-content">
+                <div id="detail"></div>
+                <script type="text/javascript">
+                    window.detail = function(route) {
+                        console.log('detail:', route)
+                        var str = "<div><a class='back' onclick='window.history.go(-1)'>返回</a></div> <h2>详情</h2> <input type='text'> <div><a href='javascript:void(0);' onclick='linkTo(\"#/detail2\")'>详情 2</a></div><div class='height'>内容占位</div>"
+                        document.querySelector("#detail").innerHTML = str
+                    }
+                </script>
+            </div>
+        </div>
+        <div class="page" data-hash="/detail2">
+            <div class="page-content">
+                <div id="detail2"></div>
+                <div style="height: 700px;border: solid 1px red;background-color: pink;margin-top: 20px;">内容占位</div>
+
+                <script type="text/javascript">
+                    window.detail2 = function(route) {
+                        console.log('detail2:', route)
+                        var str = "<div><a class='back' onclick='window.history.go(-1)'>返回</a></div> <h2>详情 2</h2> <input type='text'> <div><a href='javascript:void(0);' onclick='linkTo(\"#/home\")'>首页</a></div>"
+                        document.querySelector("#detail2").innerHTML = str
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="./js/route.js"></script>
+    <script type="text/javascript">
+        router.init()
+        router.beforeEach(function(transition) {
+            console.log('切换之 前 dosomething', transition)
+            setTimeout(function() {
+                //模拟切换之前延迟，比如说做个异步登录信息验证
+                transition.next()
+            }, 100)
+        })
+        router.afterEach(function(transition) {
+            console.log("切换之 后 dosomething", transition)
+        })
+
+        // rem 单位适配
+        var width = window.screen.width
+        document.getElementsByTagName('html')[0].style.fontSize = width / 7.5 + 'px';
+    </script>
+</body>
+
+<!-- http://127.0.0.1/svn/spa-router/index3.html#/home?index=1 
+  http://127.0.0.1/svn/spa-router/index6.html#/home?key=d4c17aa2
+http://192.168.0.102/svn/spa-router/index6.html#/home?key=d4c17aa2 -->
+
+</html>
