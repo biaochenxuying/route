@@ -16,7 +16,8 @@
                 <script type="text/javascript">
                     window.home = function(route) {
                         console.log('home:', route)
-                        var str = "<div><a class='back' onclick='window.history.go(-1)'>返回</a></div> <h2>首页</h2> <input type='text'> <div><a href='javascript:void(0);' onclick='linkTo(\"#/list\")'>列表</a></div><div class='height'>内容占位</div>"
+                            // var str = "<div><a class='back' onclick='window.history.go(-1)'>返回</a></div> <h2>首页</h2> <input type='text'> <div><a href='#/list' >列表1</div></div><div class='height'>内容占位</div>"
+                        var str = "<div><a class='back' onclick='window.history.go(-1)'>返回</a></div> <h2>首页</h2> <input type='text'> <div><div href='javascript:void(0);' onclick='linkTo(\"#/list\")'>列表</div></div><div class='height'>内容占位</div>"
                         document.querySelector("#home").innerHTML = str
                     }
                 </script>
@@ -83,8 +84,6 @@
     </script>
 </body>
 
-<!-- http://127.0.0.1/svn/spa-router/index3.html#/home?index=1 
-  http://127.0.0.1/svn/spa-router/index6.html#/home?key=d4c17aa2
-http://192.168.0.102/svn/spa-router/index6.html#/home?key=d4c17aa2 -->
+<!-- https://biaochenxuying.github.io/route/index.html#/home -->
 
 </html>

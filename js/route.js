@@ -1,9 +1,10 @@
 /*
-* author: https://github.com/kliuj
+* author: https://github.com/biaochenxuying/route
 * 使用方法：
   var config = {
       routerViewId: '#routerView', // 路由切换的挂载点 id
       stackPages: true, // 多级页面缓存
+      animationName: "slide", // 多级页面缓存
       routes: [
           // {
           //   path: "/home",
@@ -15,7 +16,7 @@
       ]
   }
   1：初始化 Router.init()
-  2：跳转  href = '#/name'
+  2：跳转  onclick='linkTo(\"#/list\")'
 */
 
 (function() {
@@ -118,6 +119,7 @@
 
             // 初始化跳转方法
             window.linkTo = function(path) {
+                console.log('path :', path)
                 if (path.indexOf("?") !== -1) {
                     window.location.hash = path + '&key=' + util.genKey()
                 } else {

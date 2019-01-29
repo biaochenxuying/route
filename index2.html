@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <div id="routerView" data-animationName="slide">
+    <div id="routerView" data-animationName="fade">
         <div class="page" data-hash="/home">
             <div class="page-content">
                 <div id="home"></div>
@@ -39,7 +39,7 @@
         var config = {
             routerViewId: 'routerView', // 路由切换的挂载点 id
             stackPages: true, // 多级页面缓存
-            animationName: "slide", // 多级页面缓存
+            animationName: "slide", // 切换页面时的动画
             routes: [{
                 path: "/home",
                 name: "home",
@@ -93,6 +93,6 @@
         document.getElementsByTagName('html')[0].style.fontSize = width / 7.5 + 'px';
     </script>
 </body>
-<!-- http://127.0.0.1/svn/spa-routers/index3.html#/home?index=1 -->
+<!-- https://biaochenxuying.github.io/route/index2.html#/home -->
 
 </html>
