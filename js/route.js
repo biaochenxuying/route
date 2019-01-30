@@ -84,7 +84,7 @@
         this.routerMap = []; // 路由遍历
         this.historyFlag = '' // 路由状态，前进，回退，刷新
         this.history = []; // 路由历史
-        this.animationName = "slide"
+        this.animationName = "fade"
     }
 
     Router.prototype = {
