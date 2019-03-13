@@ -40,7 +40,7 @@
         // 闭包返回函数
         closure(name) {
             function fun(currentHash) {
-                window[name](currentHash)
+                window.name&&window[name](currentHash)
             }
             return fun;
         },
