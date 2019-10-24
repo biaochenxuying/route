@@ -23,10 +23,10 @@
 
 
 
-## BB
+<!-- ## BB
 
 笔者技术以内的 BB。
 
 笔者 BB 首发地址：[【全栈修炼】](https://mp.weixin.qq.com/s/i0AsqMpI1YCSvDyK_zdAqw)：https://mp.weixin.qq.com/s/i0AsqMpI1YCSvDyK_zdAqw
 
-![全栈修炼](https://upload-images.jianshu.io/upload_images/12890819-9399d149e09f638e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![全栈修炼](https://upload-images.jianshu.io/upload_images/12890819-9399d149e09f638e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240) -->
